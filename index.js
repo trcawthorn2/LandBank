@@ -75,7 +75,9 @@ async function notifyOfNewINventoryItems(items){
         let zillowLink = await getZillowLink(items[i]);
         items[i].zillowLink = zillowLink;
     }
-    sendnotification(items);
+    if(items.length> 0){
+        sendnotification(items);
+    }
 
 }
 
